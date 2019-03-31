@@ -5,16 +5,16 @@ FSJS project 2 - List Filter and Pagination
 
 // Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
 const page = document.querySelector('.page');
-const studentList = document.getElementsByClassName('.student-list');
+const studentList = document.querySelector('.student-list');
 
-const showPage = (list,page) => {
+const showPage = (studentList,page) => {
   const maxPage = (page * 10) - 1;
   const minPage = (page * 10) - 10;
-  for(let i = 0; i < list.length; i++) {
+  for(let i = 0; i < studentList.length; i++) {
     if(i >= minPage && i <= maxPage) {
-      list[i].style.display = 'block';
+      studentList[i].style.display = 'block';
     } else {
-      list[i].style.display = 'none';
+      studentList[i].style.display = 'none';
     }
   }
 }
