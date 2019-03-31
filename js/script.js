@@ -6,19 +6,21 @@ FSJS project 2 - List Filter and Pagination
 // Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
 const page = document.querySelector('.page');
 const studentList = document.querySelector('.student-list');
+let newList = studentList.querySelectorAll('li.student-item');
 
-const showPage = (studentList,page) => {
+const showPage = (list,page) => {
   const maxPage = (page * 10) - 1;
   const minPage = (page * 10) - 10;
-  for(let i = 0; i < studentList.length; i++) {
+  for(let i = 0; i < list.length; i++) {
     if(i >= minPage && i <= maxPage) {
-      studentList[i].style.display = 'block';
+      list[i].style.display = 'block';
     } else {
-      studentList[i].style.display = 'none';
+      list[i].style.display = 'none';
     }
   }
 }
-showPage(studentList, 1);
+showPage(newList, 1);
+//console.log(newList.length); To show that this variable has 54 students in the list
 /***
    Add your global variables that store the DOM elements you will
    need to reference and/or manipulate.
